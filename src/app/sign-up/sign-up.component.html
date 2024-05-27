@@ -1,0 +1,44 @@
+<header>
+    <a class="logo">TripTrove</a>
+  
+    <ul class="nav">
+      <li><a href="/">INICIO</a></li>
+      <li><a href="/about">ACERCA DE</a></li>
+      <li><a href="/download">ANDROID</a></li>
+      <li><a href="/association">ASOCIATE</a></li>
+    </ul>
+    <a class="login" href="/signIn">INICIA SESION</a>
+  </header>
+  
+  <body>
+    <div class="login-wrapper">
+      <h1>Sing Up</h1>
+  
+      <div class="input-box">
+        <label for="usuario">Your email</label>
+        <input type="text" name="usuario" id="usuario"  [(ngModel)]="email" required placeholder="example@example.com">
+        <i class='bx bxs-user'></i>
+      </div>
+  
+      <div class="input-box">
+        <label for="contrasenia">Password</label>
+        <input type="password" name="contrasenia" id="contrasenia" [(ngModel)]="password" required placeholder="Enter your password">
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+  
+      <button type="button" class="btn" (click)="signUp()">Sing in</button>
+  
+      <button type="button" class="google-btn" (click)="registerWithGoogle()">
+        <div class="google-icon">
+          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="google logo">
+        </div>
+        <span class="google-text">Sing in with google</span>
+      </button>
+  
+      <div class="register-link">
+        <p>You have an account?      <a routerLink="/SingIn">Sing in for TripTrove</a></p>
+      </div>
+    </div>
+  </body>
+  
+  
