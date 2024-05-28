@@ -4,3 +4,32 @@ html, body {
   padding: 0;
   width: 100%;
 }
+/* Loader Wrapper */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+  z-index: 9999; /* Asegura que esté en el frente */
+}
+
+/* Loader */
+.loader {
+  border: 16px solid #f3f3f3; /* Color de fondo del loader */
+  border-top: 16px solid #FF5500; /* Color de la animación */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+/* Animación de giro */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
