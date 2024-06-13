@@ -1,24 +1,20 @@
 
 <head>
-    <title>Acerca De </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>¿Qué es Trip Trove?</title>
 </head>
-
-<body>
-    <header>
-        <a href="#" class="logo">TripTrove </a>
-
-        <ul>
-            <li><a href="/">INICIO</a></li>
-            <li><a href="/android">ANDROID</a></li>
-            <li><a href="/associate">ASOCIATE</a></li>
-            <li><a href="/signIn">INICIA SESION</a></li>
-        </ul>
-    </header>
-
+  <header>
+    <a class="logo">TripTrove</a>
+    <ul class="nav">
+      <li><a routerLink="/">INICIO</a></li>
+      <li><a routerLink="/about" class="active">ACERCA DE</a></li>
+      <li><a routerLink="/android">ANDROID</a></li>
+      <li><a routerLink="/associate">ASOCIATE</a></li>
+    </ul>
+    <a class="login" routerLink="/signIn">INGRESAR</a>
+  </header>
+  <body>
     <div class="parallax section1">
         <div class="parallax-overlay">
             <h1>¡Descubre la belleza de la Ciudad de México!</h1>
@@ -65,7 +61,7 @@
         </div>
     </div>
 
-    <footer class="text-center" style="background-color: #FF5500; color: white;">
+    <footer class="text-center" style="background-color: #29a1c6; color: white;">
         <p style="margin-bottom: -2px;color: white;">All Rights Reserved © TripTrove</p>
         <div class="footer-icons d-flex justify-content-center">
           <div>

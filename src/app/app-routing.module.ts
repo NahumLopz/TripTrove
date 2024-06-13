@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 import { AssociateComponent } from './associate/associate.component';
 import { AndroidComponent } from './android/android.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [ 
   { path: 'signUp', component: SignUpComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'android', component: AndroidComponent},
   { path: 'associate', component: AssociateComponent},
-  { path: 'home', component: DashboardComponent},
+  { path: 'home', component: DashboardComponent, canActivate: [AuthGuard]},
+  { path: 'dashboard', component: DashboardComponent},
   { path: '', component: HomeComponent}];
 
 @NgModule({

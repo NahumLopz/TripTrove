@@ -1,117 +1,139 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    color: #000000;
-     
-    text-decoration: none;
-    
-  }
-  body {
-     
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #000000;
+  text-decoration: none;
+}
+
+body {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   margin: 0;
-   
-     
-  
+  background-image: url("src/assets/images/fondoAndroid.jpg");
+  background-attachment: fixed;
+  background-position: center; 
+  background-size: cover;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.9s;
+  padding: 40px 100px;
+  z-index: 100000;
+  font-size: 18px;
+}
 
-  header{
-    position: fixed;
-    top:0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: 0.9s;
-    padding: 40px 100px;
-    z-index: 100000;
-    font-size: 18px;
-  }
+header .login {
+  color: #000;
+  transition: 0.6s;
+}
 
-  header.sticky{
-    padding: 5px 100px;
-    background: #ffffff;
-  }
+header.sticky .login {
+  color: #ffffff;
+  transition: 0.6s;
+}
 
-    header.sticky .logo,
-    header.sticky ul li a{
-    color:#000000;
-  }
+header.sticky .nav li:nth-child(2) a {
+  color: #ffffff;
+}
 
-  header .logo{
-    position: relative;
-    font-weight: 700;
-    color: #000000;
-    text-decoration: none;
-    font-size: 2em;
-    letter-spacing: 2px;
-    transition: 0.6s;
-  }
+header.sticky {
+  padding: 5px 100px;
+  background: rgb(37, 150, 190);
+}
 
-  header ul {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+header.sticky .logo,
+header.sticky ul li a {
+  color: #ffffff;
+}
 
-  header ul li{
-    position: relative;
-    list-style: none;
-  }
+header .logo {
+  position: relative;
+  font-weight: 700;
+  color: #000000;
+  text-decoration: none;
+  font-size: 2em;
+  letter-spacing: 2px;
+  transition: 0.6s;
+}
 
-  header ul li a {
-    position: relative;
-    margin: 0 15px;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    letter-spacing: 2px;
-    font-weight: 500;
-    transition: 0.5s;
-    overflow: hidden;
+header ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  position: relative;
+  list-style: none;
+}
+
+header ul li a {
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  letter-spacing: 2px;
+  font-weight: 500;
+  transition: 0.5s;
+  overflow: hidden;
 }
 
 header ul li a::before,
 header ul li a::after {
-    content: "";
-    position: absolute;
-    width: 120%; /* Ajusta el ancho del subrayado aquí */
-    height: 3px; /* Ajusta el grosor del subrayado aquí */
-    background-color: #000;
-    z-index: -1;
-    transition: transform 0.8s;
-    border-radius: 5px; /* Ajusta el radio del borde aquí */
+  content: "";
+  position: absolute;
+  width: 120%;
+  /* Ajusta el ancho del subrayado aquí */
+  height: 3px;
+  /* Ajusta el grosor del subrayado aquí */
+  background-color: #000;
+  z-index: -1;
+  transition: transform 0.8s;
+  border-radius: 5px;
+  /* Ajusta el radio del borde aquí */
 }
 
 header ul li a::before {
-    top: 0;
-    left: -10%; /* Ajusta el desplazamiento del subrayado aquí */
-    transform: scaleX(0);
-    transform-origin: right;
+  top: 0;
+  left: -10%;
+  /* Ajusta el desplazamiento del subrayado aquí */
+  transform: scaleX(0);
+  transform-origin: right;
 }
 
 header ul li a::after {
-    bottom: 0;
-    right: -10%; /* Ajusta el desplazamiento del subrayado aquí */
-    transform: scaleX(0);
-    transform-origin: left;
+  bottom: 0;
+  right: -10%;
+  /* Ajusta el desplazamiento del subrayado aquí */
+  transform: scaleX(0);
+  transform-origin: left;
 }
 
 header ul li a:hover {
-    color: #000000;
+  color: #000000;
 }
 
 header ul li a:hover::before,
 header ul li a:hover::after {
-    transform: scaleX(1);
-    transform-origin: center;
+  transform: scaleX(1);
+  transform-origin: center;
+}
+
+header ul li a.active {
+  font-weight: bold; 
+  font-size: 120%;
 }
 
 /* Agrega estilos para la sección de contacto */
@@ -120,7 +142,8 @@ header ul li a:hover::after {
   color: white;
   padding: 50px;
   text-align: center;
-  height: 30vh; /* Cambiado a auto para adaptarse al contenido */
+  height: 30vh;
+  /* Cambiado a auto para adaptarse al contenido */
 }
 
 .company-info {
@@ -128,11 +151,12 @@ header ul li a:hover::after {
   align-items: center;
   justify-content: space-between;
   text-align: left;
-  flex-wrap: wrap; /* Añadido para manejar el contenido en dispositivos pequeños */
+  flex-wrap: wrap;
+  /* Añadido para manejar el contenido en dispositivos pequeños */
 }
 
 .company-info img {
-  max-width: 200px; 
+  max-width: 200px;
   margin-right: 35px;
   border-radius: 7px;
   margin-bottom: 10px;
@@ -141,7 +165,8 @@ header ul li a:hover::after {
 .text-info,
 .Myxi-text-info {
   flex: 1;
-  max-width: 60%; /* Ajusta según sea necesario */
+  max-width: 60%;
+  /* Ajusta según sea necesario */
 }
 
 .team-member,
@@ -175,7 +200,7 @@ header ul li a:hover::after {
   position: relative;
   width: 220px;
   height: 320px;
-  background: mediumturquoise;
+  background: #29a1c6;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,7 +221,7 @@ header ul li a:hover::after {
   justify-content: center;
   font-size: 25px;
   font-weight: bold;
-  background-color: lightblue;
+  background-color: white;
   transition: all 0.5s;
 }
 
@@ -209,7 +234,7 @@ header ul li a:hover::after {
 .card::after {
   bottom: 0;
   left: 0;
-  border-radius: 0 100%  0 15px;
+  border-radius: 0 100% 0 15px;
 }
 
 .card:hover::before,
@@ -225,4 +250,45 @@ header ul li a:hover::after {
 }
 
 
+footer {
+  background-color: #FF5500;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  /* Ajusta esto según la necesidad */
+  margin-top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-sizing: border-box;
+}
 
+footer a,
+footer div {
+  display: flex;
+  /* Usa flexbox dentro de los enlaces y divs para alinear los SVG */
+  align-items: center;
+  /* Centra los elementos verticalmente dentro de los enlaces */
+  justify-content: center;
+  /* Centra los contenidos horizontalmente dentro de los enlaces */
+  margin: 0 10px;
+  /* Espaciado entre elementos */
+}
+
+footer svg {
+  width: 24px;
+  /* Tamaño estándar para los SVG */
+  height: 24px;
+  /* Tamaño estándar para los SVG */
+  margin-right: 5px;
+  /* Espacio a la derecha de los SVG para separarlos del texto */
+}
+
+footer p {
+  margin: 0 20px 0 0;
+  /* Margen para separar el texto del resto de elementos */
+}
+a {
+  cursor: pointer; /* Asegura que los enlaces tengan el cursor de mano */
+}

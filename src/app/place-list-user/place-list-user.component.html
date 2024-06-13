@@ -1,0 +1,27 @@
+<div *ngFor="let categoryGroup of categorizedPlaces">
+  <h2>{{ categoryGroup.category }}</h2>
+  <div class="places">
+    <div class="place" *ngFor="let place of categoryGroup.places" (click)="showModal(place)">
+      <div class="image" [ngStyle]="{ backgroundImage: 'url(' + place.imageURL + ')' }"></div>
+      <div class="info">
+        <h4>{{ place.name }}</h4>
+        <p>{{ place.description }}</p>
+        <div *ngIf="place.categories && place.categories.length > 0">
+          <p>Categorías: {{ place.categories.join(', ') }}</p>
+        </div>
+        <div *ngIf="!place.categories || place.categories.length === 0">
+          <p>Sin categorías</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isModalOpen" class="modal" (click)="closeModal()">
+  <div class="modal-content" (click)="stopPropagation($event)">
+    <div class="modal-image" [ngStyle]="{ backgroundImage: 'url(' + selectedPlace.imageURL + ')' }"></div>
+    <h2>{{ selectedPlace.name }}</h2>
+    <p>{{ selectedPlace.description }}</p>
+    <button (click)="closeModal()">Cerrar</button>
+  </div>
+</div>

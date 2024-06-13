@@ -3,7 +3,6 @@ import { AnySourceData, LngLatBounds, LngLatLike, Map, Marker, Popup } from 'map
 import { Feature } from '../interfaces/places';
 import { DirectionsApiClient } from '../api';
 import { DirectionsResponse, Route} from '../interfaces/directions';
-import { Geometry } from '../interfaces/distance';
 import { DistanceApiClient } from '../api/distanceApiClient';
  
 @Injectable({

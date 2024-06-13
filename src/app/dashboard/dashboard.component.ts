@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
-import { PlacesService } from '../maps/services/places.service'; 
+import { PlacesService } from '../maps/services/places.service'; // Importa el servicio correctamente
 import { Subscription } from 'rxjs';
 
 @Component({

@@ -17,7 +17,6 @@ export class SignInComponent {
   async iniciarSesion() {
     try {
       await this.authService.logInWithEmailAndPassword(this.usuario, this.contrasenia);
-      // El inicio de sesión fue exitoso, puedes redirigir al usuario o realizar otras acciones.
     } catch (error: any) {
       if (error.code === 'auth/user-not-found') {
         this.errorMessage = 'Usuario no encontrado. Por favor, registra una cuenta.';
@@ -34,7 +33,6 @@ export class SignInComponent {
   }
 
   regresarInicio() {
-    // Redirige al usuario a la página de inicio
     this.router.navigate(['/']);
   }
 

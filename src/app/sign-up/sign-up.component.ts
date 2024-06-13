@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
@@ -8,6 +8,19 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
+  
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    this.toggleStickyHeader(window.scrollY > 0);
+  }
+
+  private toggleStickyHeader(isSticky: boolean) {
+    const header = document.querySelector("header");
+    if (header) {
+      header.classList.toggle("sticky", isSticky);
+    }
+  }
+
   email: string = '';
   password: string = '';
   errorMessage: string | void | undefined;
